@@ -5,4 +5,4 @@ Feature: Consultation functionality
     When I navigate to the Asthma treatment section
     Then I start the consultation process as a new patient
     Then I complete the consultation questionnaire with my birthdate
-    Then I should be presented with treatment options for asthma
+    Then I should be presented with treatment options for asthma called "Ventolin (salbutamol)"

@@ -9,7 +9,8 @@ class QuestionnairePage {
         ageConfirmCheckbox: () => cy.get('[name="isAgeConfirmed"]'),
         treatmentSubtitle: () => cy.get('[class*="treatmentSubtitle"]'),
         lastNextButton: () => cy.get('.text-right button[class*="stepButton"]'),
-        foundTreatmentsTitle: () => cy.get('h2[class*="clinicTitle"]')
+        foundTreatmentsTitle: () => cy.get('h2[class*="clinicTitle"]'),
+        productCardTitle: () => cy.get('div[class*="_productCard"] [class*="_title"]')
     }
 
     checkUrl() {
@@ -60,6 +61,10 @@ class QuestionnairePage {
 
     foundTreatmentsTitleHasText(text) {
         this.elements.foundTreatmentsTitle().should('contain.text', text)
+    }
+
+    waitForProductCardHasTitle(title) {
+        this.elements.productCardTitle().should('contain.text', title)
     }
 }
 

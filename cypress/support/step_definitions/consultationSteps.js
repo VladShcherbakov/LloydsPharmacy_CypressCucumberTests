@@ -29,10 +29,11 @@ Then('I complete the consultation questionnaire with my birthdate', () => {
   QuestionnairePage.clickNextButton();
 });
 
-Then('I should be presented with treatment options for asthma', () => {
+Then('I should be presented with treatment options for asthma called {string}', (productTitle) => {
   const treatmentSubtitleText = "Please make a treatment preference";
   const treatmentTitle = "Asthma treatment";
   QuestionnairePage.waitForTreatmentSubtitleContainsText(treatmentSubtitleText);
   QuestionnairePage.clickLastNextButton();
   QuestionnairePage.foundTreatmentsTitleHasText(treatmentTitle);
+  QuestionnairePage.waitForProductCardHasTitle(productTitle)
 });
